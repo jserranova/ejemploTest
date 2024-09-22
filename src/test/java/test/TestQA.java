@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pageObject.PageBase;
 
 import java.time.Duration;
 
