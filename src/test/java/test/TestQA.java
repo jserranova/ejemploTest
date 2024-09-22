@@ -1,47 +1,33 @@
 package test;
 
 import ConstantGlobal.Constants;
+import configDriver.ConfigDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import pageObject.login.Login;
 
 import java.time.Duration;
 
 public class TestQA {
 
-    private WebDriver driver;
-
-    private PageBase pageBase;
-
-    private WebDriver getWebDriver() {
-        return null;
-    }
+   private Login login;
 
     @BeforeClass
     public void init() throws Exception {
-        System.setProperty(Constants.WEB_GOGLE, Constants.RUTA);
-        driver = new ChromeDriver();
-        driver.get(Constants.PAG);
-        driver.manage().window().maximize();
-
-        pageBase = PageFactory.initElements(driver, PageBase.class);
-
-
+        WebDriver driver = ConfigDriver.setupChromeDriver();
+        login = PageFactory.initElements(driver, Login.class);
     }
 
     @Test
     public void test() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-        pageBase.userLogin();
+     login.login();
 
     }
 
-    @AfterTest
-    public void close() {
-        //driver.close();
-    }
+
 
 }

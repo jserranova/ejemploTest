@@ -5,9 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Constants {
 
     //Selector User Login
-    public static final String USERNAME ="user-name";
-    public static final String PASSWORD = "password";
-    public static final String BUTTON_LOGIN ="//input[@type='submit']";
+    public static final String USERNAME ="standard_user";
+    public static final String PASSWORD = "secret_sauce";
 
 
     //ChromeDriver

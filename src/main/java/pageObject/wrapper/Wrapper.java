@@ -36,7 +36,7 @@ public class Wrapper {
     }
 
     //input Text
-    public void insertValue(By locator, String inputText) {
+    public void sendKeys(By locator, String inputText) {
         driver.findElement(locator).sendKeys(inputText);
     }
 
