@@ -25,9 +25,14 @@ public class Constants {
     public static final String SIDEBAR_BUTTON_OPTION = "";
     public static final String LOGO_PAGE_WEB = "";
 
+    // Pagina Varias
+    public static final String PAG_1 = "https://winstoncastillo.com/";
+    public static final String PAG_2 = "http://reddit.com";
+    public static final String PAG_3 = "";
+
 
 }
-   // Users and Password
+
 
 
 
