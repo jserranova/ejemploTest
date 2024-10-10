@@ -16,11 +16,11 @@ import java.time.Duration;
 
 public class TestQA {
 
-    //WebDriver driver = ConfigDriver.setupChromeDriver();
+    WebDriver driver = ConfigDriver.setupChromeDriver();
 
    private Login login;
    private Ejemplo ejemplo;
-    private WebDriver driver;
+
 
     @BeforeClass
     public void init() throws Exception {

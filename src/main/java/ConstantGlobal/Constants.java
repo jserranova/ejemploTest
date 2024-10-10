@@ -11,10 +11,14 @@ public class Constants {
 
     //ChromeDriver
     public  static final String WEB_GOGLE ="webdriver.chrome.driver";
-    public  static final String RUTA = "./src/test/resources/driver/chromedriver.exe";
+    public  static final String RUTA_GOOGLE = "./src/test/resources/driver/chromedriver.exe";
     public static final String PAG = "https://www.saucedemo.com/v1/index.html";
 
  // FirefoxDriver
+
+    public  static final String WEB_FIREFOX ="webdriver.gecko.driver";
+    public  static final String RUTA_FIREFOX = "./src/test/resources/driver/geckodriver.exe";
+
 
 
 
@@ -28,7 +32,7 @@ public class Constants {
     // Pagina Varias
     public static final String PAG_1 = "https://winstoncastillo.com/";
     public static final String PAG_2 = "http://reddit.com";
-    public static final String PAG_3 = "";
+    public static final String PAG_3 = "https://winstoncastillo.com/ejercicios/atoc.html";
 
 
 }
