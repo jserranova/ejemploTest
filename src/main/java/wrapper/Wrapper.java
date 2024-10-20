@@ -4,14 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Wrapper {
 
-    private WebDriver driver;
+    private static WebDriver driver;
 
     //Builder
     public Wrapper(WebDriver driver) {
@@ -25,7 +28,7 @@ public class Wrapper {
     }
 
     //Locate item list
-    public List<WebElement> findElements(By locator) {
+    public static List<WebElement> listFindElements(By locator) {
         return driver.findElements(locator);
     }
 
@@ -34,27 +37,27 @@ public class Wrapper {
         return element.getText();
     }
 
-    // text
-    public String getText(By locator) {
-        return driver.findElement(locator).getText();
-    }
 
     //input Text
-    public void sendKeys(By locator, String inputText)
-    {
-        driver.findElement(locator).sendKeys(inputText);
-    }
     public void sendkeys(WebElement webE, String texto){
         webE.clear();
         webE.sendKeys(texto);
     }
 
     // Click Button
-    public void clickButton(By locator) {
-        driver.findElement(locator).click();
+
+    public void clickButton(WebElement webE) {
+        webE.click();
     }
-    public void clickButton(WebElement element) {
-        element.click();
+
+    public void clickEspera(WebDriver driver, WebElement webE){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement clic = wait.until(ExpectedConditions.elementToBeClickable(webE));
+    }
+
+    public void leertextEspera(WebDriver driver, WebElement webE){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement clic = wait.until(ExpectedConditions.visibilityOf(webE));
     }
 
     //Clear Box
@@ -120,6 +123,7 @@ public class Wrapper {
          **/
     }
     // Para cambair de una pestaña a la otra
+
     public void cambiarPestana(WebDriver driver){
         ArrayList<String> pentanas = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(pentanas.get(1)).close();
@@ -130,6 +134,16 @@ public class Wrapper {
         Actions accionRaton = new Actions(driver);
         WebElement opcion = driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[1]/span"));
         accionRaton.moveToElement(opcion).perform();
+    }
+
+    // MEtodo para Agregar Multiple localizadores
+    public static List<WebElement> listFindElements_N(By[] locators){
+        List<WebElement> allElements = new ArrayList<>();
+
+        for (By locator : locators){
+            allElements.addAll(listFindElements(locator));
+        }
+        return allElements;
     }
 
 

@@ -1,6 +1,7 @@
 package pageObject.ejemplo;
 
 import ConstantGlobal.Constants;
+import com.sun.org.apache.xml.internal.serializer.utils.Utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -118,11 +119,24 @@ public class Ejemplo extends Wrapper {
         Thread.sleep(1000);
         System.out.println(mensaje);
         driver.switchTo().alert().accept();
-
-
-
     }
 
+
+    public static void listaElementos(WebDriver driver)throws InterruptedException{
+
+        By[] locators ={
+                By.xpath("HOLA"),
+                By.linkText("KLO"),
+                By.id("KLOSMK")
+        };
+
+
+       List<WebElement> allElements = Wrapper.listFindElements_N(locators);
+
+        for(WebElement element : allElements){
+            element.click();
+        }
+    }
 }
 
 

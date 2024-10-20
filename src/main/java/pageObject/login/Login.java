@@ -26,9 +26,7 @@ public class Login extends Wrapper {
    @FindBy(id = "login-button")private WebElement btnLogin;
 
     public void login(){
-        sendKeys(user, Constants.USERNAME);
-        sendKeys(password, Constants.PASSWORD);
-        clickButton(btnLogin);
+
 
     }
 }
