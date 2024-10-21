@@ -1,7 +1,6 @@
 package pageObject.ejemplo;
 
 import ConstantGlobal.Constants;
-import com.sun.org.apache.xml.internal.serializer.utils.Utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

@@ -34,6 +34,7 @@ public class Constants {
     public static final String PAG_2 = "http://reddit.com";
     public static final String PAG_3 = "https://winstoncastillo.com/ejercicios/atoc.html";
     public static final String PAG_4 = "http://www.automationpractice.pl/index.php?id_category=3&controller=category";
+    public static final  String PAG_5 = "http://www.automationpractice.pl/index.php";
 
 
 }
