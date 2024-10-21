@@ -62,6 +62,20 @@ public class EscribirExcel {
 
         XSSFRow   row = newSheet.getRow(rowNumber);             // Se crea la fila y se pasa como parametro el numero de fila que se quiere acceder.
 
+        XSSFCell firsCell = row.getCell(cellNumber-1);
+
+        System.out.println("first cell value is: " + firsCell.getStringCellValue());
+
+        XSSFCell nextCell = row.createCell(cellNumber);
+        nextCell.setCellValue(resultText);
+
+        System.out.println("nextCell value: " +nextCell.getStringCellValue());
+
+        inputStream.close();
+
+        FileOutputStream outputStream = new FileOutputStream(file);
+        newWorkbook.write(outputStream);
+        outputStream.close();
 
 
     }
